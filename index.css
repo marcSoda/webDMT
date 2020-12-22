@@ -116,7 +116,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    perspective: 1400px;
+    perspective: 1500px;
     transform-style: preserve-3d;
 }
 
