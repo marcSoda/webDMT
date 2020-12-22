@@ -118,6 +118,7 @@ main {
     justify-content: center;
     perspective: 1500px;
     transform-style: preserve-3d;
+    margin: .1vw;		/*fixes animation glitch*/
 }
 
 #content {
