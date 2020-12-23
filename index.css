@@ -24,7 +24,6 @@ body {
     color: var(--text-color);
     transition: .2s;
     overflow: hidden;
-    /* transform-style: preserve-3d; */
 }
 
 body.light {
@@ -41,7 +40,6 @@ body.light {
     color: var(--text-color);
     transition: .2s;
     overflow: hidden;
-    /* transform-style: preserve-3d; */
 }
 
 #navbar {
@@ -61,6 +59,7 @@ body.light {
 #navbar .nav-link {
     position: relative;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     height: var(--nav-width);
@@ -111,6 +110,7 @@ main {
 }
 
 #container {
+    font-size: 10vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -118,7 +118,7 @@ main {
     justify-content: center;
     perspective: 1500px;
     transform-style: preserve-3d;
-    margin: .1vw;		/*fixes animation glitch*/
+    margin: 2vw;		/*fixes animation glitch*/
 }
 
 #content {
@@ -137,12 +137,12 @@ main {
 #content .image {
     flex: 1;
     display: flex;
-    margin-right: 3vw;
+    margin-right: .3em;
     justify-content: center;
 }
 
 #content .image img {
-    margin: 2vw;
+    margin: .2em;
     max-width: 70%;
     max-height: 70%;
 }
@@ -151,7 +151,7 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding-left: 7vw;
+    padding-left: .7em;
     transition: all .5s ease-out;
 }
 
@@ -161,32 +161,30 @@ main {
 
 #content .info h1 {
     color: var(--text-color1);
-    font-size: 4vw;
+    font-size: .35em;
 }
 
 #content .info h2 {
-    font-size:	3.5vw;
+    font-size:	.3em;
 }
 
 #content .info p {
-    margin-top: 1vw;
+    margin-top: 1em;
     color: var(--text-color2);
-    font-size: 1.5vw;
+    font-size: .15em;
 }
 
 #content .info .button {
     display: flex;
-    margin-top: 3vh;
-    font-size: 1vw;
+    margin-top: .2em;
 }
 
 #content .info .button button {
-    font-size: 1vw;
     background: var(--bg2);
     color: var(--accent);
     border: 2px solid var(--accent);
     border-radius: 5px;
-    padding: .5vw;
+    padding: .5em;
 }
 
 #content .info .button button:hover {
@@ -195,11 +193,14 @@ main {
 }
 
 @media (max-width: 1024px) {
+    #container {
+	font-size: 15vw;
+    }
+
     #content {
 	flex-direction: column;
 	margin: 0;
-	width: 70%;
-	padding-top: 10vw;
+	padding-top: .5em;
     }
 
     #content .info {
@@ -210,6 +211,67 @@ main {
     #content .image {
 	padding: 0;
 	margin: 0;
-	height: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    #container {
+	font-size: 20vw;
+    }
+
+    #content {
+	flex-direction: column;
+	margin: 0;
+	width: 70%;
+	padding-top: .5em;
+    }
+
+    #navbar {
+	height: var(--nav-width);
+	width: 100vw;
+	flex-direction: row;
+    }
+
+    #navbar .nav-top {
+	margin-left: .5em;
+    }
+
+    #navbar .nav-middle {
+	display: flex;
+	flex-direction: row;
+    }
+
+    #navbar .nav-link {
+	width: 2.5em;
+	margin: 0;
+    }
+
+    #container {
+	justify-content: flex-start;
+	margin-top: 20vh;
+    }
+
+    #content {
+	width: 90%;
+    }
+
+    #content .info {
+	padding: 0;
+	margin: 0;
+    }
+
+    #content .image {
+	padding: 0;
+	margin: 0;
+    }
+
+    #content .image img {
+	max-width: 80%;
+	max-height: 80%;
+    }
+
+    main {
+	margin: 0;
+	margin-top: var(--nav-width);
     }
 }
